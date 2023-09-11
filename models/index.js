@@ -2,7 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
-User.haseMany(Post, {
+User.hasMany(Post, {
     foreignKey: 'user_id'
 });
 Post.belongsTo(User,{
@@ -14,7 +14,7 @@ Comment.belongsTo(Post, {
 Comment.belongsTo(User,{
     foreignKey: 'user_id'
 });
-Post.haseMany(Comment, {
+Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
 User.hasMany(Comment, {
